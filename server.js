@@ -1,4 +1,5 @@
 import express from "express";
+import { executablePath } from "puppeteer";
 import puppeteer from "puppeteer-extra";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 
@@ -15,6 +16,7 @@ app.get("/search", async (req, res) => {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    executablePath: executablePath(),
   });
 
   const page = await browser.newPage();
