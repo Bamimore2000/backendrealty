@@ -44,9 +44,11 @@ app.get("/search", async (req, res) => {
         const title =
           el.querySelector(".js-placardTitle")?.textContent?.trim() || "";
         const price =
-          el.querySelector(".price-range")?.textContent?.trim() || "";
+          el.querySelector(".price-range")?.textContent?.trim() ||
+          el.querySelector(".property-pricing")?.textContent?.trim();
         const bedBath =
-          el.querySelector(".bed-range")?.textContent?.trim() || "";
+          el.querySelector(".bed-range")?.textContent?.trim() ||
+          el.querySelector(".property-beds")?.textContent?.trim();
         const type =
           el.querySelector(".property-type-for-rent")?.textContent?.trim() ||
           "";
